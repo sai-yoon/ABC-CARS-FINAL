@@ -21,7 +21,7 @@
                     <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name"
                         class="w-full p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-color:#6c35de;">
                     @error('name')
-                        <p class="text-sm mt-1" style="color: #373737;">{{ $message }}</p>
+                        <p class="text-sm mt-1" style="color: #e0e0e0;">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -31,7 +31,7 @@
                     <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username"
                         class="w-full p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-color:#6c35de;">
                     @error('email')
-                        <p class="text-sm mt-1" style="color: #373737;">{{ $message }}</p>
+                        <p class="text-sm mt-1" style="color: #e0e0e0;">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -41,7 +41,7 @@
                     <input id="password" type="password" name="password" required autocomplete="new-password"
                         class="w-full p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-color:#6c35de;">
                     @error('password')
-                        <p class="text-sm mt-1" style="color: #373737;">{{ $message }}</p>
+                        <p class="text-sm mt-1" style="color: #e0e0e0;">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -51,7 +51,7 @@
                     <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"
                         class="w-full p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-color:#6c35de;">
                     @error('password_confirmation')
-                        <p class="text-sm mt-1" style="color: #373737;">{{ $message }}</p>
+                        <p class="text-sm mt-1" style="color: #e0e0e0;">{{ $message }}</p>
                     @enderror
                 </div>
 

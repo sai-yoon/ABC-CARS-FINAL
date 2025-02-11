@@ -1,10 +1,5 @@
 <!-- Home Page -->
 @extends('layouts.app')
-<style>
-    body {
-        background-color: #241b35;
-    }
-</style>
 @section('content')
 
 <section class="hero-section min-h-screen flex items-center justify-center text-[#ffffff] relative">
@@ -154,7 +149,7 @@
                     </div>
                 </div>
 
-                <div class=" bg-[#342a45] bg-white p-6 rounded-lg shadow-md">
+                <div class=" bg-[#342a45] p-6 rounded-lg shadow-md">
                 <div class="flex text-[#ffc7ff] mb-3">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
