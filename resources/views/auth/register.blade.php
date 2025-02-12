@@ -3,6 +3,11 @@
 @section('content')
     <div class="flex items-center justify-center min-h-screen" style="background-color: #241b35;">
         <div class="w-full max-w-md p-8 rounded-lg shadow-md" style="background-color: #342a45;">
+
+            <!-- ABC Cars Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="{{ asset('images/abccarslogo.png') }}" alt="ABC Cars Logo" class="h-32 w-32">
+            </div> 
             <h2 class="text-2xl font-bold text-center mb-6" style="color: #ffffff;">Register</h2>
 
             <!-- Session Status -->

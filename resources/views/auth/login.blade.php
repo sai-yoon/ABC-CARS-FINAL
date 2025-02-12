@@ -3,7 +3,13 @@
 @section('content')
     <div class="flex items-center justify-center min-h-screen" style="background-color: #241b35;">
         <div class="w-full max-w-md p-8 rounded-lg shadow-md" style="background-color: #342a45;">
-            <h2 class="text-2xl font-bold text-center mb-6" style="color: #ffffff;">Login</h2>
+            
+            <!-- ABC Cars Logo -->
+            <div class="flex justify-center mb-4">
+    <img src="{{ asset('images/abccarslogo.png') }}" alt="ABC Cars Logo" class="h-32 w-32">
+</div> 
+
+<h2 class="text-2xl font-bold text-center mb-4" style="color: #ffffff;">Login</h2>
 
             <!-- Session Status -->
             @if (session('status'))
@@ -50,7 +56,9 @@
                         </a>
                     @endif
 
-                    <button type="submit" style="background-color: #6c35de; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s ease-in-out;" onmouseover="this.style.background='#a364ff'" onmouseout="this.style.background='#6c35de'">Log in</button>
+                    <button type="submit" style="background-color: #6c35de; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s ease-in-out;" onmouseover="this.style.background='#a364ff'" onmouseout="this.style.background='#6c35de'">
+                        Log in
+                    </button>
                 </div>
             </form>
         </div>
