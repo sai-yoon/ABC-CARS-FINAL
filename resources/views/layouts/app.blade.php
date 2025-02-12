@@ -9,24 +9,26 @@
 <body class="bg-[#241b35] min-h-screen w-full m-0 p-0">
     
 <!-- Navigation Bar -->
-<!-- Navigation Bar -->
-<nav class="bg-[#342a45] p-4 text-[#ffffff] sticky top-0 z-50 shadow-md">
+<nav class="bg-[#342a45] p-4 text-[#ffffff] fixed w-full top-0 left-0 z-50 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
-        <a href="{{ route('home') }}" class="text-2xl font-bold text-[#ffffff]">ABC Cars</a>
+        <!-- Logo -->
+        <a href="{{ route('home') }}" class="flex items-center">
+        <img src="{{ asset('images/abccarslogo.png') }}" class="w-20 h-20" alt="ABC Cars Logo"/> 
+            <span class="text-2xl font-bold text-[#ffffff]">ABC Cars</span>
+        </a>
+
         <ul class="flex items-center space-x-6">
-            <!-- Visible to Everyone -->
-            <li><a href="{{ route('cars.index') }}" style="color: #ffffff; transition: color 0.2s ease-in;" onmouseover="this.style.color='#6c35de'" onmouseout="this.style.color='#ffffff'">Browse Cars</a></li>
-            <li><a href="{{ route('about') }}" style="color: #ffffff; transition: color 0.2s ease-in;" onmouseover="this.style.color='#6c35de'" onmouseout="this.style.color='#ffffff'">About</a></li>
-            <li><a href="{{ route('contact') }}" style="color: #ffffff; transition: color 0.2s ease-in;" onmouseover="this.style.color='#6c35de'" onmouseout="this.style.color='#ffffff'">Contact</a></li>
+            <li><a href="{{ route('cars.index') }}" class="hover:text-[#6c35de] transition duration-200">Browse Cars</a></li>
+            <li><a href="{{ route('about') }}" class="hover:text-[#6c35de] transition duration-200">About</a></li>
+            <li><a href="{{ route('contact') }}" class="hover:text-[#6c35de] transition duration-200">Contact</a></li>
 
             @auth
                 @if(Auth::user()->role !== 'admin') 
-                    <li><a href="{{ route('dashboard') }}" style="color: #ffffff; transition: color 0.2s ease-in;" onmouseover="this.style.color='#6c35de'" onmouseout="this.style.color='#ffffff'">Dashboard</a></li>
+                    <li><a href="{{ route('dashboard') }}" class="hover:text-[#6c35de] transition duration-200">Dashboard</a></li>
                 @else
-                    <li><a href="{{ route('admin.dashboard') }}" style="color: #ffffff; transition: color 0.2s ease-in;" onmouseover="this.style.color='#6c35de'" onmouseout="this.style.color='#ffffff'">Admin Panel</a></li>
+                    <li><a href="{{ route('admin.dashboard') }}" class="hover:text-[#6c35de] transition duration-200">Admin Panel</a></li>
                 @endif
 
-                <!-- Profile Picture -->
                 <li>
                     <a href="{{ route('profile.edit') }}" class="flex items-center space-x-2">
                         <img src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('images/default-avatar.png') }}" 
@@ -34,23 +36,23 @@
                     </a>
                 </li>
 
-                <!-- Logout Button -->
                 <li>
                     <form method="POST" action="{{ route('logout') }}" class="inline">
                         @csrf
-                        <button type="submit" style="background-color: #6c35de; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s ease-in;" onmouseover="this.style.background='#a364ff'" onmouseout="this.style.background='#6c35de'">Logout</button>
+                        <button type="submit" class="bg-[#6c35de] text-white px-4 py-2 rounded hover:bg-[#a364ff] transition duration-200">Logout</button>
                     </form>
                 </li>
             @else
-                <!-- Guest Links -->
-                <li><button type="submit" style="background-color: #6c35de; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s ease-in;" onmouseover="this.style.background='#a364ff'" onmouseout="this.style.background='#6c35de'"><a href="{{ route('login') }}">Login</a></button></li>
-                <li><button type="submit" style="background-color: #6c35de; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; transition: background-color 0.2s ease-in;" onmouseover="this.style.background='#a364ff'" onmouseout="this.style.background='#6c35de'"><a href="{{ route('register') }}">Register</a></button></li>
+                <li><a href="{{ route('login') }}" class="bg-[#6c35de] text-white px-4 py-2 rounded hover:bg-[#a364ff] transition duration-200">Login</a></li>
+                <li><a href="{{ route('register') }}" class="bg-[#6c35de] text-white px-4 py-2 rounded hover:bg-[#a364ff] transition duration-200">Register</a></li>
             @endauth
         </ul>
     </div>
 </nav>
 
-
+<br>
+<br>
+<br>
     
 
     
@@ -80,6 +82,23 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+    let lastScrollTop = 0;
+    let navbar = document.querySelector("nav");
+
+    // Add transition to make the movement smooth
+    navbar.style.transition = "top 0.3s ease-in-out";
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            navbar.style.top = "-110px"; // Hide Navbar
+        } else {
+            navbar.style.top = "0"; // Show Navbar
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
 </body>
 </html>
