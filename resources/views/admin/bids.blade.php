@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <h2 class="text-2xl font-bold mb-4">Manage Bids</h2>
+    <h2 class="text-2xl text-white font-bold mb-4">Manage Bids</h2>
 
     <table class="w-full bg-white shadow-md rounded border">
     <thead class="bg-gray-100">
